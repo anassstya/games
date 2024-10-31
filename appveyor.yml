@@ -1,0 +1,22 @@
+image: Ubuntu2204
+stack: node 21
+branches:
+  only:
+    - master
+cache:
+  - node_modules
+
+install:
+  - npm install
+
+build: off
+
+before_build:
+  - npm run build
+
+deploy:
+  provider: GitHub
+  token: %GITHUB_TOKEN%
+  on:
+    branch: master
+    artifact: dist
