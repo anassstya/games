@@ -32,8 +32,8 @@ class Play{
         const cells = document.querySelectorAll('.grid__elem');
         for(let i of cells){
             i.addEventListener('click', () => {
-               if(i.children.length > 0){
-                   point.textContent = parseInt(point.textContent) + 1;
+                if(i.children.length > 0){
+                    point.textContent = parseInt(point.textContent) + 1;
                 }
             })
         }
