@@ -1,4 +1,4 @@
-version: 1.0.{build}
+version: 1.0
 image: Ubuntu2204
 stack: node 21
 branches:
