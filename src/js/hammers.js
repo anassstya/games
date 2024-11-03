@@ -1,4 +1,5 @@
-class createBoard {
+
+class CreateBoard {
     constructor(size) {
         const grid = document.querySelector('.grid');
         this.size = size;

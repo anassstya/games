@@ -1,3 +1,4 @@
+version: 1.0.{build}
 image: Ubuntu2204
 stack: node 21
 branches:
@@ -11,12 +12,13 @@ install:
   - npm install
 
 build:
-  off
+  project: npm run build
 
 deploy:
   - provider: GitHub
     repository: anassstya/games
     branch: gh-pages
     token: %GITHUB_TOKEN%
+    local_dir: dist
     on:
       branch: master
