@@ -4,8 +4,7 @@
   "main": "index.js",
   "scripts": {
     "eslint": "eslint ./src",
-    "build": "webpack --mode production",
-    "vite": "vite"
+    "build": "webpack --mode production"
   },
   "author": "",
   "type": "module",

@@ -53,13 +53,9 @@ function checkResult(playerArr, player) {
             if (player === 'X') {
                 xScoreCount++;
                 xScores.innerHTML = xScoreCount;
-                winner.innerHTML = `X is winner!`;
-                winner.classList.remove('hidden');
             } else if (player === 'O') {
                 oScoreCount++;
                 oScores.innerHTML = oScoreCount;
-                winner.innerHTML = `O is winner!`;
-                winner.classList.remove('hidden');
             }
             return;
         }
@@ -68,26 +64,38 @@ function checkResult(playerArr, player) {
 
 function drawLine(res) {
     line.classList.add('win-line');
+    let delay = 100;
 
     if (res[0] === 0 && res[2] === 2) {
-        line.classList.add('horizontal', 'row-1');
+        // Горизонтальная линия первая строка
+        setTimeout(() => line.classList.add('horizontal', 'row-1'), delay);
     } else if (res[0] === 3 && res[2] === 5) {
-        line.classList.add('horizontal', 'row-2');
+        // Горизонтальная линия вторая строка
+        setTimeout(() => line.classList.add('horizontal', 'row-2'), delay);
     } else if (res[0] === 6 && res[2] === 8) {
-        line.classList.add('horizontal', 'row-3');
+        // Горизонтальная линия третья строка
+        setTimeout(() => line.classList.add('horizontal', 'row-3'), delay);
     } else if (res[0] === 0 && res[2] === 6) {
-        line.classList.add('vertical', 'col-1');
+        // Вертикальная линия первая колонка
+        setTimeout(() => line.classList.add('vertical', 'col-1'), delay);
     } else if (res[0] === 1 && res[2] === 7) {
-        line.classList.add('vertical', 'col-2');
+        // Вертикальная линия вторая колонка
+        setTimeout(() => line.classList.add('vertical', 'col-2'), delay);
     } else if (res[0] === 2 && res[2] === 8) {
-        line.classList.add('vertical', 'col-3');
+        // Вертикальная линия третья колонка
+        setTimeout(() => line.classList.add('vertical', 'col-3'), delay);
     } else if (res[0] === 0 && res[2] === 8) {
-        line.classList.add('diagonal', 'diag-1');
+        // Диагональная линия первая
+        setTimeout(() => line.classList.add('diagonal', 'diag-1'), delay);
     } else if (res[0] === 2 && res[2] === 6) {
-        line.classList.add('diagonal', 'diag-2');
+        // Диагональная линия вторая
+        setTimeout(() => line.classList.add('diagonal', 'diag-2'), delay);
     }
+
+    // Добавляем линию на доску
     boardElement.appendChild(line);
 }
+
 
 function resetBoard() {
     cells.forEach(cell => {
@@ -97,12 +105,10 @@ function resetBoard() {
     if (line.parentNode) {
         boardElement.removeChild(line);
     }
-
     line.classList.remove('win-line', 'horizontal', 'vertical', 'diagonal', 'row-1', 'row-2', 'row-3', 'col-1', 'col-2', 'col-3', 'diag-1', 'diag-2');
     gameOver = false;
     resultX = [];
     resultO = [];
-    winner.classList.add('hidden');
 }
 
 btn.addEventListener('click', resetBoard);
@@ -114,5 +120,3 @@ reset.addEventListener('click', () => {
     oScoreCount = 0;
     resetBoard();
 });
-
-
