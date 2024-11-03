@@ -17,7 +17,6 @@ class Game{
         img.src = this.link;
         const cells = document.querySelectorAll('.grid__elem');
 
-
         setInterval(() => {
             let randomIndex = Math.floor(Math.random() * cells.length);
             cells[randomIndex].appendChild(img);
@@ -46,7 +45,7 @@ class Reset{
         const btn = document.querySelector('.btn');
         const point = document.querySelector('.scores-amount');
         btn.addEventListener('click', () => {
-            point.textContent = 0
+            point.textContent = 0;
         })
     }
 }
