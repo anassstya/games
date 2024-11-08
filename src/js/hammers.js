@@ -1,5 +1,5 @@
 
-class CreateBoard {
+export class CreateBoard {
     constructor(size) {
         const grid = document.querySelector('.grid');
         this.size = size;
@@ -11,7 +11,7 @@ class CreateBoard {
     }
 }
 
-class Game{
+export class Game{
     constructor(link) {
         this.link = link;
         const img = document.createElement('img');
@@ -26,7 +26,7 @@ class Game{
     }
 }
 
-class Play{
+export class Play{
     constructor() {
         const point = document.querySelector('.scores-amount');
         const cells = document.querySelectorAll('.grid__elem');
@@ -41,7 +41,7 @@ class Play{
     }
 }
 
-class Reset{
+export class Reset{
     constructor() {
         const btn = document.querySelector('.btn');
         const point = document.querySelector('.scores-amount');
